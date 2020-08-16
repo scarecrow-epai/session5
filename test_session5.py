@@ -70,6 +70,11 @@ def test_function_name_had_cap_letter():
         ), "You have used Capital letter(s) in your function names"
 
 
+def test_print():
+	t = session5.time_it(print, 1, 2, 3, sep='-', end= ' ***\n', repetitions=5)
+	assert t != 0
+
+
 def test_squared_power_list_end():
     with pytest.raises(ValueError):
         session5.squared_power_list(2, 0, 0)

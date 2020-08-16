@@ -85,3 +85,6 @@ def speed_converter(speed, to_distance_unit, to_time_unit):
         speed *= 24
 
     return speed
+
+
+print(time_it(print, 1, 2, 3, sep='-', end= ' ***\n', repetitions=5))
