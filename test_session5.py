@@ -71,8 +71,28 @@ def test_function_name_had_cap_letter():
 
 
 def test_print():
-	t = session5.time_it(print, 1, 2, 3, sep='-', end= ' ***\n', repetitions=5)
-	assert t != 0
+    t = session5.time_it(print, 1, 2, 3, sep="-", end=" ***\n", repetitions=5)
+    assert t != 0
+
+
+def test_squared_power_list_time():
+    t = session5.time_it(session5.squared_power_list, 2, start=0, end=5, repetitions=5)
+    assert t != 0
+
+
+def test_polygon_area_time():
+    t = session5.time_it(session5.polygon_area, side_len=10, sides=6, repetitions=10)
+    assert t != 0
+
+
+def test_temp_converter():
+    t = session5.time_it(session5.temp_converter, 0, "c", "f", repetitions=100)
+    assert t != 0
+
+
+def test_speed_converter_time():
+    t = session5.time_it(session5.speed_converter, 10, "km", "ms", repetitions=1000)
+    assert t != 0
 
 
 def test_squared_power_list_end():
@@ -101,11 +121,6 @@ def test_polygon_area_side_len_zero():
 
 
 def test_polygon_area_3():
-    a = session5.polygon_area(side_len=10, sides=3)
-    assert round(a) == 43
-
-
-def test_polygon_area_4():
     a = session5.polygon_area(side_len=10, sides=4)
     assert round(a) == 100
 
